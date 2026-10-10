@@ -1,0 +1,19 @@
+{
+  "version": "1.1.0",
+  "repository": "qubicsdata/folio-distribution",
+  "tag": "v1.1.0",
+  "artifacts": {
+    "darwin-arm64": {
+      "sha256": "9d5c753c2055ecdcacd0d8a490c130f8874aff516d61c111187445d643341470"
+    },
+    "darwin-x64": {
+      "sha256": "b4697c89fa283d0370ae0075be035782f03d5bf92d8337b0aa81616a2453d1b0"
+    },
+    "linux-arm64": {
+      "sha256": "2b81e2a501497fe2c7fbcb28a701faf2fca0015b5351a434bf0680e461cc0064"
+    },
+    "linux-x64": {
+      "sha256": "84a10d68dcdc09e6b633c7e1b861c9a2b96043334b020ea236e095ea0be189b5"
+    }
+  }
+}

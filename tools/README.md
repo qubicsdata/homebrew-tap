@@ -1,0 +1,11 @@
+# Local bottle assembly and verification
+
+These are the exact assembly recipes for the frozen Switchboard 2.0.0 and Folio 1.1.0 archives. They build standard Homebrew bottles from independently verified prebuilt archives; they do not claim compilation by Homebrew. Runtime contents are checked before and after packaging. The source, platform and archive identities are explicit inputs or release-specific pins.
+
+Provide `--archive`, `--sha256`, `--target`, `--tag`, `--formula`, `--receipt`, `--strategy ../lib/github_private_release_download_strategy.rb` and `--output-dir`. Switchboard also needs `--wrapper switchboard-homebrew-wrapper.sh`. Run `--help` for exact arguments. The receipt must come from the actual target Homebrew context; never relabel translated execution as native. Output includes the bottle, checksum and assembly receipt. Switchboard also emits its complete payload inventory.
+
+The exact clean assembly formulas and archive inventories are preserved in `../assembly/`. Pass those formula templates to `--formula`; they contain no bottle block. Generate a new clean source formula from the product's reviewed four-platform archive inventory when changing versions. Never use the final shipping formula as an assembly input, because it would embed stale bottle digests. Once all bottles are built, generate the shipping formula from their exact checksums. Keep the tap formula's shared helper in `lib/`; each embedded keg formula has a private copy in `.brew/lib`, avoiding global-prefix collisions.
+
+Test normal Homebrew installation, both products together, formula behavior, installed-formula loading and complete post-pour runtime integrity in isolated prefixes. `verify-installed-formula.rb` exercises Homebrew's actual fallback loader. On a host whose `brew test` command refuses compiler setup before tests, `formula-test-without-compiler.rb` runs the unchanged formula test block through Homebrew's own API. Report this distinction; do not call it a successful stock `brew test` invocation.
+
+All application build inputs, raw acceptance identity and platform scopes are recorded in the products' release evidence. GitHub Actions is disabled. No service or live user workspace is needed for validation.
