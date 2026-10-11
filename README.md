@@ -37,8 +37,8 @@ Use `brew uninstall switchboard folio-workspace` to remove the software. User wo
 
 ## Installation releases
 
-- [Switchboard 2.0.1](https://github.com/qubicsdata/switchboard-releases/releases/tag/v2.0.1)
-- [Folio 1.1.1](https://github.com/qubicsdata/folio-releases/releases/tag/v1.1.1)
+- [Switchboard 2.0.2](https://github.com/qubicsdata/switchboard-releases/releases/tag/v2.0.2)
+- [Folio 1.1.2](https://github.com/qubicsdata/folio-releases/releases/tag/v1.1.2)
 
 All release packages are built locally. GitHub Actions is disabled. Formulas pin each platform bottle and archive by SHA-256. Bottles preserve the verified runtime files and refuse source fallback that could alter them. The two products can coexist in one Homebrew prefix; embedded formula helpers stay in private metadata directories. Native Apple installers and notarization are outside this Homebrew distribution. Both products are originally developed by QubicsData. First-party code uses Apache-2.0 with applicable attribution preserved in NOTICE. Switchboard documentation retains CC-BY-4.0; bundled dependencies retain their own licenses and notices. The release repositories contain installation packages and documentation; development source repositories remain separately private and are not needed to install. Packaged Python and JavaScript can remain readable.
 
