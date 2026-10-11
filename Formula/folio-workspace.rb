@@ -1,6 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
 # Generated from reviewed release hashes; authentication never appears in this file.
-require_relative "../lib/github_private_release_download_strategy"
 
 class FolioWorkspace < Formula
   desc "Local planning workspace with optional Switchboard execution"
@@ -10,27 +9,27 @@ class FolioWorkspace < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/qubicsdata/folio-releases/releases/download/v1.1.1/folio-1.1.1-darwin-arm64.tar.gz", using: QubicsdataGitHubPrivateReleaseDownloadStrategy
+      url "https://github.com/qubicsdata/folio-releases/releases/download/v1.1.1/folio-1.1.1-darwin-arm64.tar.gz"
       sha256 "e59cce3dbd38b2bfab0890a5a724d2ab0b2a4cd8f956ef7ae385812b593a0187"
     end
     on_intel do
-      url "https://github.com/qubicsdata/folio-releases/releases/download/v1.1.1/folio-1.1.1-darwin-x64.tar.gz", using: QubicsdataGitHubPrivateReleaseDownloadStrategy
+      url "https://github.com/qubicsdata/folio-releases/releases/download/v1.1.1/folio-1.1.1-darwin-x64.tar.gz"
       sha256 "c5a97307f706fc1031af1ff70e8b811d47d47f1d8a9f3d504c56cc7259f92dec"
     end
   end
   on_linux do
     on_arm do
-      url "https://github.com/qubicsdata/folio-releases/releases/download/v1.1.1/folio-1.1.1-linux-arm64.tar.gz", using: QubicsdataGitHubPrivateReleaseDownloadStrategy
+      url "https://github.com/qubicsdata/folio-releases/releases/download/v1.1.1/folio-1.1.1-linux-arm64.tar.gz"
       sha256 "c39de1c3744bf4a1c1245c8216a1e3299501aa911585f0da6e236255788aabca"
     end
     on_intel do
-      url "https://github.com/qubicsdata/folio-releases/releases/download/v1.1.1/folio-1.1.1-linux-x64.tar.gz", using: QubicsdataGitHubPrivateReleaseDownloadStrategy
+      url "https://github.com/qubicsdata/folio-releases/releases/download/v1.1.1/folio-1.1.1-linux-x64.tar.gz"
       sha256 "12acdd8006777986f48af69779d900d1da114f79afa7d0683ac9babe3a40c011"
     end
   end
 
   bottle do
-    root_url "https://github.com/qubicsdata/folio-releases/releases/download/v1.1.1", using: QubicsdataGitHubPrivateReleaseDownloadStrategy
+    root_url "https://github.com/qubicsdata/folio-releases/releases/download/v1.1.1"
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "240b73e607353e7d090b15e262977069f60169c1a46b2dca0cbaec58b953717d"
     sha256 cellar: :any_skip_relocation, arm64_linux: "a21642369eeeced21fa9814424a3bda43b297ffcbf98f56a6cef34c5e6f5a0f1"
     sha256 cellar: :any_skip_relocation, golden_gate: "211e699f9d1e56c4cd23e58e9b4c6adbabc7415c6fdbaa41397f606c3010481b"

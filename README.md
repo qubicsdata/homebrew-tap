@@ -1,20 +1,18 @@
 # QubicsData Homebrew tap
 
-Install Folio and Switchboard with their bundled runtimes. The verified bottles target macOS 27 (ARM64 and x64) and glibc Linux (ARM64 and x64). macOS ARM64 and Linux ARM64 were tested natively; macOS x64 uses Rosetta and Linux x64 uses full-system QEMU TCG. Other macOS versions can use the matching standalone release archives, subject to their runtime requirements. This tap and the release repositories are private; your GitHub account needs read access to all three repositories.
+Install Folio and Switchboard with their bundled runtimes. The verified bottles target macOS 27 (ARM64 and x64) and glibc Linux (ARM64 and x64). macOS ARM64 and Linux ARM64 were tested natively; macOS x64 uses Rosetta and Linux x64 uses full-system QEMU TCG. Other macOS versions can use the matching standalone release archives, subject to their runtime requirements. This tap and both release repositories are public. Installation does not require GitHub credentials. Application development repositories remain private.
 
-## Authentication
+## Add the tap
 
-Sign in with GitHub CLI and enable its Git credential helper for cloning the private tap:
+Add the public tap:
 
 ```sh
-gh auth login
-gh auth setup-git
 brew tap qubicsdata/tap https://github.com/qubicsdata/homebrew-tap.git
 ```
 
 Homebrew 7 may request `brew trust qubicsdata/tap` before installing.
 
-Release asset downloads use your GitHub CLI credential or `HOMEBREW_GITHUB_API_TOKEN`. A fine-grained token needs read access to repository contents in `qubicsdata/switchboard-releases` and `qubicsdata/folio-releases`. Authenticate locally; do not put tokens into repository URLs or configuration files committed to Git.
+Current formulas download public assets over HTTPS using Homebrew’s standard downloader and verify pinned SHA-256 hashes. No private download strategy or GitHub token is required. Historical recipes retain their original private-distribution strategy for provenance.
 
 ## Install and open
 
@@ -43,3 +41,7 @@ Use `brew uninstall switchboard folio-workspace` to remove the software. User wo
 - [Folio 1.1.1](https://github.com/qubicsdata/folio-releases/releases/tag/v1.1.1)
 
 All release packages are built locally. GitHub Actions is disabled. Formulas pin each platform bottle and archive by SHA-256. Bottles preserve the verified runtime files and refuse source fallback that could alter them. The two products can coexist in one Homebrew prefix; embedded formula helpers stay in private metadata directories. Native Apple installers and notarization are outside this Homebrew distribution. Both products are originally developed by QubicsData. First-party code uses Apache-2.0 with applicable attribution preserved in NOTICE. Switchboard documentation retains CC-BY-4.0; bundled dependencies retain their own licenses and notices. The release repositories contain installation packages and documentation; development source repositories remain separately private and are not needed to install. Packaged Python and JavaScript can remain readable.
+
+## Security
+
+Report installer or formula vulnerabilities through [private vulnerability reporting](https://github.com/qubicsdata/homebrew-tap/security/advisories/new). For application vulnerabilities, use the corresponding [Folio](https://github.com/qubicsdata/folio-releases/security/advisories/new) or [Switchboard](https://github.com/qubicsdata/switchboard-releases/security/advisories/new) private reporting channel. Never put credentials or private project data in public issues.
