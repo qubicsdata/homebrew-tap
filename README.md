@@ -14,17 +14,17 @@ brew tap qubicsdata/tap https://github.com/qubicsdata/homebrew-tap.git
 
 Homebrew 7 may request `brew trust qubicsdata/tap` before installing.
 
-Release asset downloads use your GitHub CLI credential or `HOMEBREW_GITHUB_API_TOKEN`. A fine-grained token needs read access to repository contents in `qubicsdata/switchboard-distribution` and `qubicsdata/folio-distribution`. Authenticate locally; do not put tokens into repository URLs or configuration files committed to Git.
+Release asset downloads use your GitHub CLI credential or `HOMEBREW_GITHUB_API_TOKEN`. A fine-grained token needs read access to repository contents in `qubicsdata/switchboard-releases` and `qubicsdata/folio-releases`. Authenticate locally; do not put tokens into repository URLs or configuration files committed to Git.
 
 ## Install and open
 
 ```sh
 brew install qubicsdata/tap/switchboard qubicsdata/tap/folio-workspace
 switchboard ui
-folio-server
+folio ui
 ```
 
-Folio serves its local workspace at the address printed by `folio-server`. Switchboard opens its dashboard. Agent CLIs and their vendor sign-ins remain separate; `switchboard doctor` reports what is available. Installation does not start background work or migrate an existing workspace.
+Both commands open their local dashboards. Agent CLIs and their vendor sign-ins remain separate; `switchboard doctor` reports what is available. Installation does not start background work or migrate an existing workspace.
 
 ## Update and remove
 
@@ -37,9 +37,9 @@ brew upgrade qubicsdata/tap/switchboard qubicsdata/tap/folio-workspace
 
 Use `brew uninstall switchboard folio-workspace` to remove the software. User workspaces and project data remain in their existing locations. Use each app’s explicit backup and migration commands when moving existing data. Homebrew owns the installed application; Switchboard’s transactional self-updater is for standalone installations.
 
-## Releases and source
+## Installation releases
 
-- [Switchboard 2.0.0](https://github.com/qubicsdata/switchboard-distribution/releases/tag/v2.0.0)
-- [Folio 1.1.0](https://github.com/qubicsdata/folio-distribution/releases/tag/v1.1.0)
+- [Switchboard 2.0.1](https://github.com/qubicsdata/switchboard-releases/releases/tag/v2.0.1)
+- [Folio 1.1.1](https://github.com/qubicsdata/folio-releases/releases/tag/v1.1.1)
 
-All release packages are built locally. GitHub Actions is disabled. Formulas pin each platform bottle and archive by SHA-256. Bottles preserve the verified runtime files and refuse source fallback that could alter them. The two products can coexist in one Homebrew prefix; embedded formula helpers stay in private metadata directories. Native Apple installers and notarization are outside this Homebrew distribution. First-party source and binaries use Apache-2.0; bundled dependencies retain their own licenses and notices.
+All release packages are built locally. GitHub Actions is disabled. Formulas pin each platform bottle and archive by SHA-256. Bottles preserve the verified runtime files and refuse source fallback that could alter them. The two products can coexist in one Homebrew prefix; embedded formula helpers stay in private metadata directories. Native Apple installers and notarization are outside this Homebrew distribution. Both products are originally developed by QubicsData. First-party code uses Apache-2.0 with applicable attribution preserved in NOTICE. Switchboard documentation retains CC-BY-4.0; bundled dependencies retain their own licenses and notices. The release repositories contain installation packages and documentation; development source repositories remain separately private and are not needed to install. Packaged Python and JavaScript can remain readable.

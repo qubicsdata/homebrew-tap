@@ -1,0 +1,36 @@
+{
+  "homebrewManifestVersion": 1,
+  "product": "switchboard",
+  "version": "2.0.1",
+  "source_commit": "c3fa728f6f6e44bfd4a16adc8ece7d1cf2d60019",
+  "artifacts": [
+    {
+      "kind": "archive",
+      "target": "darwin-arm64",
+      "file": "switchboard-2.0.1-783044bf3ad0-darwin-arm64-node.tar.gz",
+      "sha256": "11b0be7bae671f2a7f7ec00c75f188fa12781d47f5a215ed12872421a9f34d17",
+      "size": 72438651
+    },
+    {
+      "kind": "archive",
+      "target": "darwin-x64",
+      "file": "switchboard-2.0.1-783044bf3ad0-darwin-x64-node.tar.gz",
+      "sha256": "98795c50499e6ae9a7b126dc2d4b62d60b9d06219a04e9eee304b8c02b91619f",
+      "size": 74872432
+    },
+    {
+      "kind": "archive",
+      "target": "linux-arm64",
+      "file": "switchboard-2.0.1-783044bf3ad0-linux-arm64-node.tar.gz",
+      "sha256": "be515210e1539e9d61fbfa6a1dceaab8785de73fc4a085e356fab8ffb6af9f04",
+      "size": 77912834
+    },
+    {
+      "kind": "archive",
+      "target": "linux-x64",
+      "file": "switchboard-2.0.1-783044bf3ad0-linux-x64-node.tar.gz",
+      "sha256": "1f741adc73c823b9f7246d9482973cdbec68a8a72ee56f54036dbc940c555b7f",
+      "size": 79548233
+    }
+  ]
+}

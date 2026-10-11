@@ -1,0 +1,27 @@
+{
+  "product": "folio",
+  "version": "1.1.1",
+  "source_commit": "10bc00d2ba92e6bb715fc371fe8df04f41da78b2",
+  "artifacts": [
+    {
+      "file": "folio-1.1.1-darwin-arm64.tar.gz",
+      "sha256": "e59cce3dbd38b2bfab0890a5a724d2ab0b2a4cd8f956ef7ae385812b593a0187",
+      "bytes": 25175694
+    },
+    {
+      "file": "folio-1.1.1-darwin-x64.tar.gz",
+      "sha256": "c5a97307f706fc1031af1ff70e8b811d47d47f1d8a9f3d504c56cc7259f92dec",
+      "bytes": 24983422
+    },
+    {
+      "file": "folio-1.1.1-linux-arm64.tar.gz",
+      "sha256": "c39de1c3744bf4a1c1245c8216a1e3299501aa911585f0da6e236255788aabca",
+      "bytes": 29154328
+    },
+    {
+      "file": "folio-1.1.1-linux-x64.tar.gz",
+      "sha256": "12acdd8006777986f48af69779d900d1da114f79afa7d0683ac9babe3a40c011",
+      "bytes": 34773684
+    }
+  ]
+}

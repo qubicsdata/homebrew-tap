@@ -4,37 +4,37 @@ require_relative "../lib/github_private_release_download_strategy"
 
 class FolioWorkspace < Formula
   desc "Local planning workspace with optional Switchboard execution"
-  homepage "https://github.com/qubicsdata/folio-distribution"
-  version "1.1.0"
+  homepage "https://github.com/qubicsdata/folio-releases"
+  version "1.1.1"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/qubicsdata/folio-distribution/releases/download/v1.1.0/folio-1.1.0-darwin-arm64.tar.gz", using: QubicsdataGitHubPrivateReleaseDownloadStrategy
-      sha256 "9d5c753c2055ecdcacd0d8a490c130f8874aff516d61c111187445d643341470"
+      url "https://github.com/qubicsdata/folio-releases/releases/download/v1.1.1/folio-1.1.1-darwin-arm64.tar.gz", using: QubicsdataGitHubPrivateReleaseDownloadStrategy
+      sha256 "e59cce3dbd38b2bfab0890a5a724d2ab0b2a4cd8f956ef7ae385812b593a0187"
     end
     on_intel do
-      url "https://github.com/qubicsdata/folio-distribution/releases/download/v1.1.0/folio-1.1.0-darwin-x64.tar.gz", using: QubicsdataGitHubPrivateReleaseDownloadStrategy
-      sha256 "b4697c89fa283d0370ae0075be035782f03d5bf92d8337b0aa81616a2453d1b0"
+      url "https://github.com/qubicsdata/folio-releases/releases/download/v1.1.1/folio-1.1.1-darwin-x64.tar.gz", using: QubicsdataGitHubPrivateReleaseDownloadStrategy
+      sha256 "c5a97307f706fc1031af1ff70e8b811d47d47f1d8a9f3d504c56cc7259f92dec"
     end
   end
   on_linux do
     on_arm do
-      url "https://github.com/qubicsdata/folio-distribution/releases/download/v1.1.0/folio-1.1.0-linux-arm64.tar.gz", using: QubicsdataGitHubPrivateReleaseDownloadStrategy
-      sha256 "2b81e2a501497fe2c7fbcb28a701faf2fca0015b5351a434bf0680e461cc0064"
+      url "https://github.com/qubicsdata/folio-releases/releases/download/v1.1.1/folio-1.1.1-linux-arm64.tar.gz", using: QubicsdataGitHubPrivateReleaseDownloadStrategy
+      sha256 "c39de1c3744bf4a1c1245c8216a1e3299501aa911585f0da6e236255788aabca"
     end
     on_intel do
-      url "https://github.com/qubicsdata/folio-distribution/releases/download/v1.1.0/folio-1.1.0-linux-x64.tar.gz", using: QubicsdataGitHubPrivateReleaseDownloadStrategy
-      sha256 "84a10d68dcdc09e6b633c7e1b861c9a2b96043334b020ea236e095ea0be189b5"
+      url "https://github.com/qubicsdata/folio-releases/releases/download/v1.1.1/folio-1.1.1-linux-x64.tar.gz", using: QubicsdataGitHubPrivateReleaseDownloadStrategy
+      sha256 "12acdd8006777986f48af69779d900d1da114f79afa7d0683ac9babe3a40c011"
     end
   end
 
   bottle do
-    root_url "https://github.com/qubicsdata/folio-distribution/releases/download/v1.1.0", using: QubicsdataGitHubPrivateReleaseDownloadStrategy
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "74257045ae1f30b07c4056d9e98a0c7b28756732966845728cebcc59b82dddd1"
-    sha256 cellar: :any_skip_relocation, golden_gate: "3f2a19232adb2033e4b1290cfaa743494180402fbe0efc81ad843f839c12e8ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux: "6d31c94aabb5095cad8b9116e0d8a50a98d66636ba1f526dddc5293341a03118"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5ae0931a27af575197c22b6c10404941d1c406021ae8c35edd855c147a944fa5"
+    root_url "https://github.com/qubicsdata/folio-releases/releases/download/v1.1.1", using: QubicsdataGitHubPrivateReleaseDownloadStrategy
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "240b73e607353e7d090b15e262977069f60169c1a46b2dca0cbaec58b953717d"
+    sha256 cellar: :any_skip_relocation, arm64_linux: "a21642369eeeced21fa9814424a3bda43b297ffcbf98f56a6cef34c5e6f5a0f1"
+    sha256 cellar: :any_skip_relocation, golden_gate: "211e699f9d1e56c4cd23e58e9b4c6adbabc7415c6fdbaa41397f606c3010481b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cb7ea32dd52d70c8d3683fc07143f709323d0bfafd003746446e873ddaa89ea3"
   end
 
   def install
@@ -52,10 +52,10 @@ class FolioWorkspace < Formula
 
   test do
     system libexec/"python/bin/python3", "-I", "-B", libexec/"install-folio-standalone.py", "--verify-only"
-    assert_match "folio 1.1.0", shell_output("#{bin}/folio --version")
+    assert_match "folio 1.1.1", shell_output("#{bin}/folio --version")
     status = JSON.parse(shell_output("#{bin}/folio --data-dir #{testpath}/workspace status"))
     assert_equal true, status.fetch("ok")
-    assert_equal "1.1.0", status.fetch("data").fetch("version")
+    assert_equal "1.1.1", status.fetch("data").fetch("version")
     system bin/"folio", "--data-dir", testpath/"workspace", "init", testpath, "--client", "Homebrew test"
     assert_path_exists testpath/"workspace/registry.json"
     assert_path_exists testpath/".task-manager/project.json"
